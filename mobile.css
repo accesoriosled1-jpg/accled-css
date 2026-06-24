@@ -19,7 +19,7 @@
     width: 100% !important;
     flex: 0 0 100% !important;
     order: 99 !important;
-    padding: 0 16px !important;
+    padding: 0 30px !important;            /* barra mas contenida, no pegada al borde */
     margin: 30px auto 4px !important;
     box-sizing: border-box !important;
   }
@@ -30,14 +30,16 @@
     position: relative !important;
     margin: 0 !important;
   }
+  /* form-group = la barra: input + boton azul PEGADO a la derecha (como
+     en desktop). overflow:hidden recorta el boton a la forma de pildora. */
   html body .js-search-form .form-group:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: flex !important;
-    align-items: center !important;
+    align-items: stretch !important;
     width: 100% !important;
-    height: 42px !important;
+    height: 44px !important;
     background: #ffffff !important;
-    border-radius: 21px !important;
-    padding: 0 6px 0 0 !important;
+    border-radius: 22px !important;
+    padding: 0 !important;
     margin: 0 !important;
     overflow: hidden !important;
     position: relative !important;
@@ -47,25 +49,24 @@
     width: auto !important;
     min-width: 0 !important;
     height: 100% !important;
-    background: transparent !important;
+    background: #ffffff !important;
     border: 0 !important;
     border-radius: 0 !important;
-    padding: 0 8px 0 18px !important;
+    padding: 0 12px 0 18px !important;
     box-sizing: border-box !important;
   }
   html body .js-search-form .js-search-input-submit:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     position: static !important;
     flex: 0 0 auto !important;
-    width: 32px !important;
-    height: 32px !important;
+    width: 50px !important;
+    height: 100% !important;
     min-width: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
-    border-radius: 50% !important;
+    border-radius: 0 !important;        /* recortado por overflow:hidden del form-group */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 12px !important;
     transform: none !important;
     top: auto !important;
     right: auto !important;
@@ -115,6 +116,10 @@
   /* ===== 4) TITULO "EMPRESAS QUE CONFIAN" — grande, centrado, parejo === */
   html body section.section-brands-home:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-top: 16px !important;
+  }
+  html body section.section-brands-home .container:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
   html body .section-brands-home h2:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j),
   html body .section-brands-home h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j),
