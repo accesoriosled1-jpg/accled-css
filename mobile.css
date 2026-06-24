@@ -2,22 +2,30 @@
    mobile.css — Accesorios LED (Tiendanube, tema Morelia)
    Servido por jsDelivr desde el repo accesoriosled1-jpg/accled-css.
    Importado con UNA linea @import en el cuadro CSS de Tiendanube (?v=N).
-
-   REGLA ABSOLUTA: TODO el CSS de este archivo es SOLO MOBILE.
-   Nada aca debe afectar el desktop (>= 768px). Cada bloque va envuelto
-   en @media (max-width: 767px). El desktop ya esta publicado y NO se toca.
-
-   ESPECIFICIDAD: el cuadro de Tiendanube tiene reglas viejas con muy alta
-   especificidad (html body ... :not(#a)...:not(#f) !important) y nuestro
-   @import va ARRIBA del cuadro, asi que para ganar usamos selectores con
-   mayor especificidad (html body ... + 7 x :not(#id)).
+   TODO solo-mobile (@media max-width:767px). El desktop NO se toca.
    ========================================================================== */
 
 @media (max-width: 767px) {
 
-  /* ========================================================================
-     1) BUSCADOR — barra full-width con la lupa limpia adentro (sin emoji).
-     ======================================================================== */
+  /* ===== MARCADOR DE PRUEBA (TEMPORAL) ==============================
+     Barra roja fija arriba de todo. Si la ves en el celu, el metodo
+     llega a tu dispositivo. Se quita en cuanto confirmes. =========== */
+  html body::before {
+    content: "CSS MOBILE OK - v3" !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ff0000 !important;
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    padding: 14px !important;
+    z-index: 2147483647 !important;
+  }
+
+  /* ===== 1) BUSCADOR — sin doble lupa ============================== */
   html body .js-search-form:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g) {
     width: 100% !important;
     max-width: 100% !important;
@@ -49,11 +57,7 @@
     justify-content: center !important;
   }
 
-  /* ========================================================================
-     2) BANNER "ESPECIALISTAS" — full-bleed (sin bordes laterales).
-     CORREGIDO: el borde venia del PADDING DE LA SECCION (16px), no del
-     contenedor. (Verificado a 380px: la imagen pasa de x:16 a x:0.)
-     ======================================================================== */
+  /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed =================== */
   html body section[data-store="home-banner-promotional"]:not(#a):not(#b):not(#c) {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -64,29 +68,19 @@
     max-width: 100% !important;
   }
 
-  /* ========================================================================
-     3) CATEGORIAS — imagenes mas grandes dentro de cada placa.
-     (PRIMERA PASADA: ajustamos el valor segun tu captura del celu.)
-     ======================================================================== */
+  /* ===== 3) CATEGORIAS — imagenes mas grandes (primera pasada) ==== */
   html body section[data-store="home-banner-categories"] .js-textbanner-image {
     height: 150px !important;
     max-width: 100% !important;
     object-fit: contain !important;
   }
 
-  /* ========================================================================
-     4) FOOTER / ENVIOS-ASESORAMIENTO — compactar espacios muertos.
-     (PRIMERA PASADA: reducimos huecos verticales; afinamos con tu captura.)
-     ======================================================================== */
+  /* ===== 4) FOOTER — compactar (primera pasada) ================== */
   html body section.section-brands-home {
     padding-bottom: 20px !important;
   }
   html body section[data-store="banner-services"] {
     padding-top: 8px !important;
     padding-bottom: 8px !important;
-  }
-  html body section[data-store="banner-services"] .js-informative-banners,
-  html body section[data-store="banner-services"] .swiper-container {
-    margin-bottom: 6px !important;
   }
 }
