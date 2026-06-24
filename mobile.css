@@ -1,64 +1,74 @@
 /* ==========================================================================
    mobile.css — Accesorios LED (Tiendanube, tema Morelia) — BORRADOR
    Servido por jsDelivr (commit-pin). TODO solo-mobile (@media max-width:767px).
-   El desktop NO se toca. Especificidad alta (:not(#id) x9) para ganarles a
+   El desktop NO se toca. Especificidad alta (:not(#id) x10) para ganarles a
    los experimentos viejos del cuadro del borrador.
    ========================================================================== */
 
 @media (max-width: 767px) {
 
-  /* ===== 1) BUSCADOR — barra real funcional, lupa centrada, sin pisar carrito */
-  html body .js-head-main .js-search-button:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  /* ===== 1) BUSCADOR — barra real, lupa DENTRO via FLEX (robusto) =======
+     La lupa es un hijo flex al final del form-group (NO absoluto), asi que
+     no se "escapa" en ningun dispositivo. La barra va mas abajo para darle
+     aire al logo. Se oculta el boton del modal roto. ===================== */
+  html body .js-head-main .js-search-button:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
   }
-  html body .js-head-logo-row .js-utility-col.js-search-utility:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  html body .js-head-logo-row .js-utility-col.js-search-utility:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: block !important;
     width: 100% !important;
     flex: 0 0 100% !important;
     order: 99 !important;
-    padding: 0 18px !important;
-    margin: 26px auto 4px !important;
+    padding: 0 16px !important;
+    margin: 30px auto 4px !important;
     box-sizing: border-box !important;
   }
-  html body .js-search-utility .js-search-form:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  html body .js-search-utility .js-search-form:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     position: relative !important;
     margin: 0 !important;
   }
-  html body .js-search-utility .js-search-form .form-group:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
-    display: block !important;
+  html body .js-search-form .form-group:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
+    display: flex !important;
+    align-items: center !important;
     width: 100% !important;
-    margin: 0 !important;
-    position: static !important;
-  }
-  html body .js-search-form .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
     height: 42px !important;
+    background: #ffffff !important;
     border-radius: 21px !important;
-    padding: 0 48px 0 16px !important;
+    padding: 0 6px 0 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+  html body .js-search-form .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
+    flex: 1 1 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 8px 0 18px !important;
     box-sizing: border-box !important;
   }
-  html body .js-search-form .js-search-input-submit:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
-    position: absolute !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    right: 6px !important;
-    left: auto !important;
-    margin: auto 0 !important;
-    transform: none !important;
-    width: 30px !important;
-    height: 30px !important;
+  html body .js-search-form .js-search-input-submit:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
+    position: static !important;
+    flex: 0 0 auto !important;
+    width: 32px !important;
+    height: 32px !important;
     min-width: 0 !important;
     padding: 0 !important;
+    margin: 0 !important;
     border-radius: 50% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     font-size: 12px !important;
+    transform: none !important;
+    top: auto !important;
+    right: auto !important;
   }
 
   /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed (OK) =================== */
@@ -72,21 +82,24 @@
     max-width: 100% !important;
   }
 
-  /* ===== 3) CATEGORIAS — sacar titulo duplicado de abajo, ensanchar las
-     placas (menos padding) y centrar el titulo de arriba ================ */
-  html body section[data-store="home-banner-categories"] .js-banners-mobile-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  /* ===== 3) CATEGORIAS — sin titulo duplicado, placas anchas, titulo
+     centrado y con espacio PAREJO arriba/abajo ========================== */
+  html body section[data-store="home-banner-categories"] .js-banners-mobile-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
   }
-  html body section[data-store="home-banner-categories"] .js-banner-container.container:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  html body section[data-store="home-banner-categories"]:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
+    padding-top: 16px !important;
+  }
+  html body section[data-store="home-banner-categories"] .js-banner-container.container:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-left: 12px !important;
     padding-right: 12px !important;
   }
-  html body section[data-store="home-banner-categories"] .js-banners-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  html body section[data-store="home-banner-categories"] .js-banners-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     text-align: center !important;
-    margin: 0 0 14px !important;
+    margin: 0 0 16px !important;
     padding: 0 !important;
     font-size: 20px !important;
   }
@@ -99,39 +112,38 @@
     margin-right: auto !important;
   }
 
-  /* ===== 4) TITULO "EMPRESAS QUE CONFIAN" — mas grande y centrado ====== */
-  html body .section-brands-home h2:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i),
-  html body .section-brands-home h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i),
-  html body .section-brands-home .h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  /* ===== 4) TITULO "EMPRESAS QUE CONFIAN" — grande, centrado, parejo === */
+  html body section.section-brands-home:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
+    padding-top: 16px !important;
+  }
+  html body .section-brands-home h2:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j),
+  html body .section-brands-home h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j),
+  html body .section-brands-home .h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: block !important;
     font-size: 20px !important;
     text-align: center !important;
     width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin: 0 0 16px !important;
   }
 
-  /* ===== 5) FOOTER — sacar espacio (envios/asesoramiento y final) ======
-     El hueco grande venia de las FLECHAS del carrusel de beneficios
-     (js-informative-banners-prev/next): en mobile no hacen falta porque
-     los 4 beneficios ya se ven todos. Las ocultamos -> -58px de hueco. */
-  html body section.section-informative-banners .js-informative-banners-prev:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i),
-  html body section.section-informative-banners .js-informative-banners-next:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  /* ===== 5) FOOTER — sacar flechas del carrusel de beneficios (hueco) == */
+  html body section.section-informative-banners .js-informative-banners-prev:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j),
+  html body section.section-informative-banners .js-informative-banners-next:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
   }
-  html body section.section-informative-banners *:has(> .js-informative-banners-prev):not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  html body section.section-informative-banners *:has(> .js-informative-banners-prev):not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
     height: 0 !important;
     margin: 0 !important;
   }
-  html body section.section-informative-banners:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  html body section.section-informative-banners:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
   }
   html body section.section-brands-home:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     padding-bottom: 16px !important;
   }
-  html body .js-footer:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  html body .js-footer:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-bottom: 10px !important;
   }
 }
