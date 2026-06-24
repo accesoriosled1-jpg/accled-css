@@ -6,6 +6,12 @@
    REGLA ABSOLUTA: TODO el CSS de este archivo es SOLO MOBILE.
    Nada aca debe afectar el desktop (>= 768px). Cada bloque va envuelto
    en @media (max-width: 767px). El desktop ya esta publicado y NO se toca.
+
+   NOTA DE ESPECIFICIDAD: el cuadro de Tiendanube tiene reglas viejas del
+   buscador con especificidad muy alta (html body .js-head-logo-row ...
+   :not(#a)...:not(#f) !important). Como el @import va ARRIBA del cuadro,
+   nuestras reglas quedan antes en la cascada; por eso, para ganarles,
+   usamos selectores con mayor especificidad (7 x :not(#id)).
    ========================================================================== */
 
 @media (max-width: 767px) {
@@ -14,26 +20,25 @@
      1) BUSCADOR — barra full-width con la lupa limpia adentro.
      Diagnostico: el form tenia un emoji (lupa fantasma) en ::after, y el
      boton de submit (azul, esquinas rectas, mas alto que la barra) se
-     montaba encima -> "2 lupas" y barra rota.
-     Fix: ocultar el emoji, barra a ancho completo, input con padding a la
-     derecha, y la lupa como boton circular centrado adentro a la derecha.
+     montaba encima -> "2 lupas" y barra rota. Reglas viejas de alta
+     especificidad en el cuadro nos pisaban -> subimos especificidad.
      ======================================================================== */
-  .js-search-utility .js-search-form {
+  html body .js-search-form:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g) {
     width: 100% !important;
     max-width: 100% !important;
   }
-  .js-search-form::after {
+  html body .js-search-form:not(#a):not(#b):not(#c)::after {
     content: none !important;
     display: none !important;
   }
-  .js-search-input {
+  html body .js-search-form .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g) {
     width: 100% !important;
     height: 44px !important;
     border-radius: 22px !important;
     padding: 0 50px 0 18px !important;
     box-sizing: border-box !important;
   }
-  .js-search-input-submit {
+  html body .js-search-form .js-search-input-submit:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g) {
     position: absolute !important;
     top: 50% !important;
     right: 5px !important;
@@ -51,11 +56,9 @@
 
   /* ========================================================================
      2) BANNER "ESPECIALISTAS EN ACCESORIOS" — full-bleed (sin bordes).
-     Diagnostico: el contenedor .js-banner-container tenia padding 0 30px,
-     dejando franjas a los costados.
-     Fix: sacar el padding lateral de ese contenedor SOLO en este banner.
+     (Verificado: el contenedor pasa de padding 0 30px a 0.)
      ======================================================================== */
-  section[data-store="home-banner-promotional"] .js-banner-container {
+  html body section[data-store="home-banner-promotional"] .js-banner-container {
     padding-left: 0 !important;
     padding-right: 0 !important;
     max-width: 100% !important;
@@ -64,9 +67,8 @@
   /* ========================================================================
      3) CATEGORIAS — imagenes mas grandes dentro de cada placa.
      (PRIMERA PASADA: ajustamos el valor segun tu captura del celu.)
-     Imagen actual ~131x120px; la agrandamos sin deformar (contain).
      ======================================================================== */
-  section[data-store="home-banner-categories"] .js-textbanner-image {
+  html body section[data-store="home-banner-categories"] .js-textbanner-image {
     height: 150px !important;
     max-width: 100% !important;
     object-fit: contain !important;
@@ -76,15 +78,15 @@
      4) FOOTER / ENVIOS-ASESORAMIENTO — compactar espacios muertos.
      (PRIMERA PASADA: reducimos huecos verticales; afinamos con tu captura.)
      ======================================================================== */
-  section.section-brands-home {
+  html body section.section-brands-home {
     padding-bottom: 20px !important;
   }
-  section[data-store="banner-services"] {
+  html body section[data-store="banner-services"] {
     padding-top: 8px !important;
     padding-bottom: 8px !important;
   }
-  section[data-store="banner-services"] .js-informative-banners,
-  section[data-store="banner-services"] .swiper-container {
+  html body section[data-store="banner-services"] .js-informative-banners,
+  html body section[data-store="banner-services"] .swiper-container {
     margin-bottom: 6px !important;
   }
 }
