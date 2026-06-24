@@ -1,0 +1,14 @@
+/* ==========================================================================
+   mobile.css — Accesorios LED (Tiendanube, tema Morelia)
+   Servido por jsDelivr desde el repo accesoriosled1-jpg/accled-css.
+   Importado con UNA línea @import en el cuadro CSS de Tiendanube.
+
+   REGLA ABSOLUTA: TODO el CSS de este archivo es SOLO MOBILE.
+   Nada acá debe afectar el desktop (>= 768px). Cada bloque va envuelto
+   en @media (max-width: 767px). El desktop ya está publicado y NO se toca.
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  /* Los bloques por componente se agregan acá debajo, uno por uno.
+     (Por ahora vacío: este archivo solo establece el pipeline GitHub -> jsDelivr -> Tiendanube.) */
+}
