@@ -1,27 +1,22 @@
 /* ==========================================================================
    mobile.css — Accesorios LED (Tiendanube, tema Morelia)
    Servido por jsDelivr desde el repo accesoriosled1-jpg/accled-css.
-   Importado con UNA linea @import en el cuadro CSS de Tiendanube.
+   Importado con UNA linea @import en el cuadro CSS de Tiendanube (?v=N).
 
    REGLA ABSOLUTA: TODO el CSS de este archivo es SOLO MOBILE.
    Nada aca debe afectar el desktop (>= 768px). Cada bloque va envuelto
    en @media (max-width: 767px). El desktop ya esta publicado y NO se toca.
 
-   NOTA DE ESPECIFICIDAD: el cuadro de Tiendanube tiene reglas viejas del
-   buscador con especificidad muy alta (html body .js-head-logo-row ...
-   :not(#a)...:not(#f) !important). Como el @import va ARRIBA del cuadro,
-   nuestras reglas quedan antes en la cascada; por eso, para ganarles,
-   usamos selectores con mayor especificidad (7 x :not(#id)).
+   ESPECIFICIDAD: el cuadro de Tiendanube tiene reglas viejas con muy alta
+   especificidad (html body ... :not(#a)...:not(#f) !important) y nuestro
+   @import va ARRIBA del cuadro, asi que para ganar usamos selectores con
+   mayor especificidad (html body ... + 7 x :not(#id)).
    ========================================================================== */
 
 @media (max-width: 767px) {
 
   /* ========================================================================
-     1) BUSCADOR — barra full-width con la lupa limpia adentro.
-     Diagnostico: el form tenia un emoji (lupa fantasma) en ::after, y el
-     boton de submit (azul, esquinas rectas, mas alto que la barra) se
-     montaba encima -> "2 lupas" y barra rota. Reglas viejas de alta
-     especificidad en el cuadro nos pisaban -> subimos especificidad.
+     1) BUSCADOR — barra full-width con la lupa limpia adentro (sin emoji).
      ======================================================================== */
   html body .js-search-form:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g) {
     width: 100% !important;
@@ -55,10 +50,15 @@
   }
 
   /* ========================================================================
-     2) BANNER "ESPECIALISTAS EN ACCESORIOS" — full-bleed (sin bordes).
-     (Verificado: el contenedor pasa de padding 0 30px a 0.)
+     2) BANNER "ESPECIALISTAS" — full-bleed (sin bordes laterales).
+     CORREGIDO: el borde venia del PADDING DE LA SECCION (16px), no del
+     contenedor. (Verificado a 380px: la imagen pasa de x:16 a x:0.)
      ======================================================================== */
-  html body section[data-store="home-banner-promotional"] .js-banner-container {
+  html body section[data-store="home-banner-promotional"]:not(#a):not(#b):not(#c) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  html body section[data-store="home-banner-promotional"] .js-banner-container:not(#a):not(#b):not(#c) {
     padding-left: 0 !important;
     padding-right: 0 !important;
     max-width: 100% !important;
