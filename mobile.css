@@ -46,6 +46,7 @@
     position: relative !important;
   }
   html body .js-search-form .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
+    display: block !important;          /* CLAVE: el tema lo ocultaba (display:none) -> el buscador no funcionaba */
     flex: 1 1 auto !important;
     width: auto !important;
     min-width: 0 !important;
