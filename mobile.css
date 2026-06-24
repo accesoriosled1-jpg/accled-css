@@ -1,16 +1,12 @@
 /* ==========================================================================
    mobile.css — Accesorios LED (Tiendanube, tema Morelia) — BORRADOR
    Servido por jsDelivr (commit-pin). TODO solo-mobile (@media max-width:767px).
-   El desktop NO se toca. Especificidad alta (:not(#id) x10) para ganarles a
-   los experimentos viejos del cuadro del borrador.
+   El desktop NO se toca. Especificidad alta para ganarles a los experimentos.
    ========================================================================== */
 
 @media (max-width: 767px) {
 
-  /* ===== 1) BUSCADOR — barra real, lupa DENTRO via FLEX (robusto) =======
-     La lupa es un hijo flex al final del form-group (NO absoluto), asi que
-     no se "escapa" en ningun dispositivo. La barra va mas abajo para darle
-     aire al logo. Se oculta el boton del modal roto. ===================== */
+  /* ===== 1) BUSCADOR — barra real, lupa DENTRO, input visible/typeable == */
   html body .js-head-main .js-search-button:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
   }
@@ -19,7 +15,7 @@
     width: 100% !important;
     flex: 0 0 100% !important;
     order: 99 !important;
-    padding: 0 30px !important;            /* barra mas contenida, no pegada al borde */
+    padding: 0 30px !important;
     margin: 30px auto 4px !important;
     box-sizing: border-box !important;
   }
@@ -30,9 +26,6 @@
     position: relative !important;
     margin: 0 !important;
   }
-  /* form-group = la barra (pildora blanca). position:relative ancla la lupa
-     AL FORM-GROUP (no al form) -> no se escapa en ningun dispositivo.
-     overflow:hidden recorta el boton azul a la forma de pildora. */
   html body .js-search-form .form-group:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: block !important;
     position: relative !important;
@@ -44,10 +37,6 @@
     padding: 0 !important;
     margin: 0 !important;
   }
-  /* input: llena toda la barra. display:block lo hace VISIBLE (el tema lo
-     tenia en display:none -> el buscador no funcionaba). max-width:none +
-     especificidad NUCLEAR (15x :not) para pisar un experimento viejo del
-     borrador que lo clavaba en max-width:40vw (=156px). */
   html body .js-head-logo-row .js-search-form .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j):not(#k):not(#l):not(#m):not(#n):not(#o) {
     display: block !important;
     position: static !important;
@@ -60,8 +49,14 @@
     border-radius: 0 !important;
     padding: 0 56px 0 18px !important;
     box-sizing: border-box !important;
+    font-size: 16px !important;
+    line-height: normal !important;
   }
-  /* lupa: boton azul absoluto, pegado al borde derecho de la barra */
+  html body .js-head-logo-row .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h)::placeholder {
+    font-size: 16px !important;
+    line-height: normal !important;
+    opacity: 1 !important;
+  }
   html body .js-search-form .js-search-input-submit:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     position: absolute !important;
     top: 0 !important;
@@ -80,10 +75,24 @@
     transform: none !important;
   }
 
-  /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed (OK) =================== */
-  html body section[data-store="home-banner-promotional"]:not(#a):not(#b):not(#c) {
+  /* ===== 1b) LOGO — mas grande y un poco mas abajo ===================== */
+  html body [data-store="head"] .logo-img:not(#a):not(#b):not(#c):not(#d):not(#e) {
+    height: 56px !important;
+    max-height: 56px !important;
+    width: auto !important;
+    margin-top: 10px !important;
+  }
+
+  /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed + sin bandas (8x :not) = */
+  html body section[data-store="home-banner-promotional"]:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  html body section.section-banners-home[data-store="home-banner-promotional"]:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
   html body section[data-store="home-banner-promotional"] .js-banner-container:not(#a):not(#b):not(#c) {
     padding-left: 0 !important;
@@ -91,8 +100,7 @@
     max-width: 100% !important;
   }
 
-  /* ===== 3) CATEGORIAS — sin titulo duplicado, placas anchas, titulo
-     centrado y con espacio PAREJO arriba/abajo ========================== */
+  /* ===== 3) CATEGORIAS — sin titulo duplicado, placas anchas, centrado = */
   html body section[data-store="home-banner-categories"] .js-banners-mobile-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
   }
@@ -121,7 +129,7 @@
     margin-right: auto !important;
   }
 
-  /* ===== 4) TITULO "EMPRESAS QUE CONFIAN" — grande, centrado, parejo === */
+  /* ===== 4) TITULO "EMPRESAS QUE CONFIAN" — grande, centrado ============ */
   html body section.section-brands-home:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-top: 16px !important;
   }
