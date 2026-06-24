@@ -34,6 +34,7 @@
      en desktop). overflow:hidden recorta el boton a la forma de pildora. */
   html body .js-search-form .form-group:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: flex !important;
+    flex-direction: row-reverse !important;   /* input a la izq, boton lupa a la der (como desktop) */
     align-items: stretch !important;
     width: 100% !important;
     height: 44px !important;
