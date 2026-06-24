@@ -111,7 +111,19 @@
     margin-right: 0 !important;
   }
 
-  /* ===== 5) FOOTER — sacar espacio (envios/asesoramiento y final) ====== */
+  /* ===== 5) FOOTER — sacar espacio (envios/asesoramiento y final) ======
+     El hueco grande venia de las FLECHAS del carrusel de beneficios
+     (js-informative-banners-prev/next): en mobile no hacen falta porque
+     los 4 beneficios ya se ven todos. Las ocultamos -> -58px de hueco. */
+  html body section.section-informative-banners .js-informative-banners-prev:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i),
+  html body section.section-informative-banners .js-informative-banners-next:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    display: none !important;
+  }
+  html body section.section-informative-banners *:has(> .js-informative-banners-prev):not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+  }
   html body section.section-informative-banners:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
