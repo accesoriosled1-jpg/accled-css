@@ -1,59 +1,60 @@
 /* ==========================================================================
-   mobile.css — Accesorios LED (Tiendanube, tema Morelia)
-   Servido por jsDelivr (commit-pin) e importado en el cuadro del BORRADOR.
-   TODO solo-mobile (@media max-width:767px). El desktop NO se toca.
-   Alta especificidad (html body ... + :not(#id) x8) para ganarles a los
-   experimentos mobile viejos que quedaron en el cuadro del borrador.
+   mobile.css — Accesorios LED (Tiendanube, tema Morelia) — BORRADOR
+   Servido por jsDelivr (commit-pin). TODO solo-mobile (@media max-width:767px).
+   El desktop NO se toca. Especificidad alta (html body ... :not(#id) x9)
+   para ganarles a los experimentos viejos del cuadro del borrador.
    ========================================================================== */
 
 @media (max-width: 767px) {
 
-  /* ===== 1) BUSCADOR — barra real funcional, full-width, lupa adentro =====
-     Se oculta el boton que abre el modal roto (.js-search-button) y se
-     muestra el form real como barra a ancho completo, con la lupa (submit)
-     chica adentro a la derecha. La barra funciona escribiendo + Enter. ===== */
-  html body .js-head-main .js-search-button:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+  /* ===== 1) BUSCADOR — barra real funcional, lupa centrada adentro =======
+     Se oculta el boton del modal roto y se muestra el form real como barra.
+     La lupa se centra con top/bottom:0 + margin:auto (robusto, no depende
+     de la altura). Barra con un pequeno margen lateral (no pegada al borde). */
+  html body .js-head-main .js-search-button:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     display: none !important;
   }
-  html body .js-head-logo-row .js-utility-col.js-search-utility:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+  html body .js-head-logo-row .js-utility-col.js-search-utility:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     display: block !important;
     width: 100% !important;
-    max-width: 100% !important;
     flex: 0 0 100% !important;
     order: 99 !important;
-    padding: 0 !important;
-    margin-top: 8px !important;
+    padding: 0 18px !important;
+    margin: 8px auto 2px !important;
+    box-sizing: border-box !important;
   }
-  html body .js-search-utility .js-search-form:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+  html body .js-search-utility .js-search-form:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     position: relative !important;
-  }
-  html body .js-search-utility .js-search-form .form-group:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
     margin: 0 !important;
   }
-  html body .js-search-form .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+  html body .js-search-utility .js-search-form .form-group:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    position: static !important;
+  }
+  html body .js-search-form .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     height: 42px !important;
     border-radius: 21px !important;
-    padding: 0 46px 0 16px !important;
+    padding: 0 48px 0 16px !important;
     box-sizing: border-box !important;
   }
-  html body .js-search-form .js-search-input-submit:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+  html body .js-search-form .js-search-input-submit:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     position: absolute !important;
-    top: 50% !important;
-    right: 4px !important;
-    bottom: auto !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 6px !important;
     left: auto !important;
-    transform: translateY(-50%) !important;
-    width: 32px !important;
-    height: 32px !important;
+    margin: auto 0 !important;
+    transform: none !important;
+    width: 30px !important;
+    height: 30px !important;
     min-width: 0 !important;
     padding: 0 !important;
     border-radius: 50% !important;
@@ -63,7 +64,7 @@
     font-size: 12px !important;
   }
 
-  /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed (confirmado OK) ========= */
+  /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed (OK confirmado) ========= */
   html body section[data-store="home-banner-promotional"]:not(#a):not(#b):not(#c) {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -74,31 +75,45 @@
     max-width: 100% !important;
   }
 
-  /* ===== 3) TITULOS — "Explora categorias" y "Empresas que confian" =====
-     Mas grandes (21px) y centrados, iguales entre si. ==================== */
-  html body .js-banners-section-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+  /* ===== 3) TITULOS — mas grandes (21px), block y centrados ============= */
+  html body .js-banners-section-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    display: block !important;
     font-size: 21px !important;
     text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 14px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
   }
-  html body section.section-brands-home h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+  html body .section-brands-home h2:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i),
+  html body .section-brands-home h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i),
+  html body .section-brands-home .h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    display: block !important;
     font-size: 21px !important;
     text-align: center !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
-  /* ===== 4) CATEGORIAS — imagenes mas grandes dentro de la placa ======= */
+  /* ===== 4) CATEGORIAS — imagen centrada y mas grande en la placa ======= */
   html body section[data-store="home-banner-categories"] .js-textbanner-image {
-    height: 150px !important;
+    height: 160px !important;
+    width: auto !important;
     max-width: 100% !important;
     object-fit: contain !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
-  /* ===== 5) FOOTER / ENVIOS-ASESORAMIENTO — sacar espacio arriba y abajo =
-     Habia 6 reglas viejas (40-60px) con :not(#a)x3 -> las ganamos con x8. = */
-  html body section.section-informative-banners:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
-    padding-top: 12px !important;
-    padding-bottom: 12px !important;
+  /* ===== 5) FOOTER / ENVIOS-ASESORAMIENTO — sacar espacio arriba/abajo === */
+  html body section.section-informative-banners:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
   }
-  html body section.section-brands-home:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
-    padding-bottom: 18px !important;
+  html body section.section-brands-home:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    padding-bottom: 16px !important;
   }
 }
