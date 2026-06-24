@@ -30,48 +30,54 @@
     position: relative !important;
     margin: 0 !important;
   }
-  /* form-group = la barra: input + boton azul PEGADO a la derecha (como
-     en desktop). overflow:hidden recorta el boton a la forma de pildora. */
+  /* form-group = la barra (pildora blanca). position:relative ancla la lupa
+     AL FORM-GROUP (no al form) -> no se escapa en ningun dispositivo.
+     overflow:hidden recorta el boton azul a la forma de pildora. */
   html body .js-search-form .form-group:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
-    display: flex !important;
-    flex-direction: row-reverse !important;   /* input a la izq, boton lupa a la der (como desktop) */
-    align-items: stretch !important;
+    display: block !important;
+    position: relative !important;
     width: 100% !important;
     height: 44px !important;
     background: #ffffff !important;
     border-radius: 22px !important;
+    overflow: hidden !important;
     padding: 0 !important;
     margin: 0 !important;
-    overflow: hidden !important;
-    position: relative !important;
   }
-  html body .js-search-form .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
-    display: block !important;          /* CLAVE: el tema lo ocultaba (display:none) -> el buscador no funcionaba */
-    flex: 1 1 auto !important;
-    width: auto !important;
+  /* input: llena toda la barra. display:block lo hace VISIBLE (el tema lo
+     tenia en display:none -> el buscador no funcionaba). max-width:none +
+     especificidad NUCLEAR (15x :not) para pisar un experimento viejo del
+     borrador que lo clavaba en max-width:40vw (=156px). */
+  html body .js-head-logo-row .js-search-form .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j):not(#k):not(#l):not(#m):not(#n):not(#o) {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
     min-width: 0 !important;
     height: 100% !important;
     background: #ffffff !important;
     border: 0 !important;
     border-radius: 0 !important;
-    padding: 0 12px 0 18px !important;
+    padding: 0 56px 0 18px !important;
     box-sizing: border-box !important;
   }
+  /* lupa: boton azul absoluto, pegado al borde derecho de la barra */
   html body .js-search-form .js-search-input-submit:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
-    position: static !important;
-    flex: 0 0 auto !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    margin: 0 !important;
     width: 50px !important;
     height: 100% !important;
     min-width: 0 !important;
     padding: 0 !important;
-    margin: 0 !important;
-    border-radius: 0 !important;        /* recortado por overflow:hidden del form-group */
+    border-radius: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     transform: none !important;
-    top: auto !important;
-    right: auto !important;
   }
 
   /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed (OK) =================== */
