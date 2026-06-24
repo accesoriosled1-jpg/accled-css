@@ -1,16 +1,13 @@
 /* ==========================================================================
    mobile.css — Accesorios LED (Tiendanube, tema Morelia) — BORRADOR
    Servido por jsDelivr (commit-pin). TODO solo-mobile (@media max-width:767px).
-   El desktop NO se toca. Especificidad alta (html body ... :not(#id) x9)
-   para ganarles a los experimentos viejos del cuadro del borrador.
+   El desktop NO se toca. Especificidad alta (:not(#id) x9) para ganarles a
+   los experimentos viejos del cuadro del borrador.
    ========================================================================== */
 
 @media (max-width: 767px) {
 
-  /* ===== 1) BUSCADOR — barra real funcional, lupa centrada adentro =======
-     Se oculta el boton del modal roto y se muestra el form real como barra.
-     La lupa se centra con top/bottom:0 + margin:auto (robusto, no depende
-     de la altura). Barra con un pequeno margen lateral (no pegada al borde). */
+  /* ===== 1) BUSCADOR — barra real funcional, lupa centrada, sin pisar carrito */
   html body .js-head-main .js-search-button:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     display: none !important;
   }
@@ -20,7 +17,7 @@
     flex: 0 0 100% !important;
     order: 99 !important;
     padding: 0 18px !important;
-    margin: 8px auto 2px !important;
+    margin: 26px auto 4px !important;
     box-sizing: border-box !important;
   }
   html body .js-search-utility .js-search-form:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
@@ -64,7 +61,7 @@
     font-size: 12px !important;
   }
 
-  /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed (OK confirmado) ========= */
+  /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed (OK) =================== */
   html body section[data-store="home-banner-promotional"]:not(#a):not(#b):not(#c) {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -75,32 +72,26 @@
     max-width: 100% !important;
   }
 
-  /* ===== 3) TITULOS — mas grandes (21px), block y centrados ============= */
-  html body .js-banners-section-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+  /* ===== 3) CATEGORIAS — sacar titulo duplicado de abajo, ensanchar las
+     placas (menos padding) y centrar el titulo de arriba ================ */
+  html body section[data-store="home-banner-categories"] .js-banners-mobile-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    display: none !important;
+  }
+  html body section[data-store="home-banner-categories"] .js-banner-container.container:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  html body section[data-store="home-banner-categories"] .js-banners-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     display: block !important;
-    font-size: 21px !important;
-    text-align: center !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 auto 14px !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-  }
-  html body .section-brands-home h2:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i),
-  html body .section-brands-home h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i),
-  html body .section-brands-home .h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
-    display: block !important;
-    font-size: 21px !important;
     text-align: center !important;
-    width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin: 0 0 14px !important;
+    padding: 0 !important;
+    font-size: 20px !important;
   }
-
-  /* ===== 4) CATEGORIAS — imagen centrada y mas grande en la placa ======= */
   html body section[data-store="home-banner-categories"] .js-textbanner-image {
-    height: 160px !important;
-    width: auto !important;
+    height: 150px !important;
     max-width: 100% !important;
     object-fit: contain !important;
     display: block !important;
@@ -108,12 +99,27 @@
     margin-right: auto !important;
   }
 
-  /* ===== 5) FOOTER / ENVIOS-ASESORAMIENTO — sacar espacio arriba/abajo === */
+  /* ===== 4) TITULO "EMPRESAS QUE CONFIAN" — mas grande y centrado ====== */
+  html body .section-brands-home h2:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i),
+  html body .section-brands-home h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i),
+  html body .section-brands-home .h3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    display: block !important;
+    font-size: 20px !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* ===== 5) FOOTER — sacar espacio (envios/asesoramiento y final) ====== */
   html body section.section-informative-banners:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
   }
   html body section.section-brands-home:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
     padding-bottom: 16px !important;
+  }
+  html body .js-footer:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i) {
+    padding-bottom: 10px !important;
   }
 }
