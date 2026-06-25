@@ -88,7 +88,7 @@
     top: 12px !important;
   }
   html body [data-store="head"] .utilities-container:not(#a):not(#b):not(#c):not(#d):not(#e) {
-    transform: translateY(-32px) !important;
+    transform: translateY(-30px) !important;
   }
 
   /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed + sin bandas (8x :not) = */
@@ -113,7 +113,7 @@
     display: none !important;
   }
   html body section[data-store="home-banner-categories"]:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
-    padding-top: 10px !important;
+    padding-top: 30px !important;
   }
   html body section[data-store="home-banner-categories"] .js-banner-container.container:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-left: 10px !important;
@@ -124,17 +124,16 @@
     width: 100% !important;
     max-width: 100% !important;
     text-align: center !important;
-    margin: 0 0 16px !important;
+    margin: 0 0 24px !important;
     padding: 0 !important;
     font-size: 20px !important;
   }
-  /* placas: 108px, ancho segun proporcion (width:auto) para NO dejar bandas
-     oscuras a los costados. La foto no llena el recuadro por el blanco propio
-     del archivo de imagen (limite del asset, no del CSS). */
+  /* placas: el CONTENEDOR mide 90px con overflow:hidden -> la imagen entra
+     en <=90px o se RECORTA abajo (ese era el corte de Espejos/Escobillas). */
   html body section[data-store="home-banner-categories"] .js-textbanner-image:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j):not(#k):not(#l) {
     width: auto !important;
     max-width: 100% !important;
-    height: 108px !important;
+    height: 86px !important;
     object-fit: contain !important;
     display: block !important;
     margin: 0 auto !important;
@@ -181,15 +180,16 @@
   html body .js-footer:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-bottom: 10px !important;
   }
-  /* footer: menu inferior mas pegado al telefono (items y columnas) */
+  /* footer: menu inferior + contacto con aire moderado (ni encimado ni
+     demasiado separado) */
   html body [data-store="footer"] .footer-menu-item:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
-    margin-bottom: 8px !important;
+    margin-bottom: 10px !important;
   }
   html body [data-store="footer"] .mb-3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
-    margin-bottom: 4px !important;
+    margin-bottom: 10px !important;
   }
   html body [data-store="footer"] .list.py-2:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
-    padding-top: 3px !important;
-    padding-bottom: 3px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
   }
 }
