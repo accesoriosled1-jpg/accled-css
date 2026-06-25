@@ -77,6 +77,11 @@
     justify-content: center !important;
     transform: none !important;
   }
+  /* oculta ".js-empty-search" (lupa tachada) que aparecia al escribir y se
+     superponia con la lupa real -> se veia bugeado */
+  html body .js-search-form .js-empty-search:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+    display: none !important;
+  }
 
   /* ===== 1b) LOGO mas abajo + ICONOS (menu/carrito) alineados a su tope = */
   html body [data-store="head"] .logo-img:not(#a):not(#b):not(#c):not(#d):not(#e) {
@@ -88,7 +93,7 @@
     top: 12px !important;
   }
   html body [data-store="head"] .utilities-container:not(#a):not(#b):not(#c):not(#d):not(#e) {
-    transform: translateY(-30px) !important;
+    transform: translateY(-18px) !important;
   }
 
   /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed + sin bandas (8x :not) = */
@@ -108,12 +113,15 @@
     max-width: 100% !important;
   }
 
-  /* ===== 3) CATEGORIAS — sin titulo duplicado, titulo centrado, placas == */
+  /* ===== 3) CATEGORIAS — titulo centrado (compensa banda hero) + placas
+     centradas y mas grandes ============================================= */
   html body section[data-store="home-banner-categories"] .js-banners-mobile-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
   }
+  /* el hero deja 8px de banda oscura arriba; 8+22=30 iguala el borde
+     superior de "Empresas" -> el titulo queda centrado */
   html body section[data-store="home-banner-categories"]:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
-    padding-top: 30px !important;
+    padding-top: 22px !important;
   }
   html body section[data-store="home-banner-categories"] .js-banner-container.container:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-left: 10px !important;
@@ -128,12 +136,21 @@
     padding: 0 !important;
     font-size: 20px !important;
   }
-  /* placas: el CONTENEDOR mide 90px con overflow:hidden -> la imagen entra
-     en <=90px o se RECORTA abajo (ese era el corte de Espejos/Escobillas). */
+  /* CONTENEDOR de la placa: por defecto 90px, recorta y alinea arriba.
+     Lo hago crecer (height auto) y centrar (flex) -> placa entera, mas
+     grande y centrada. */
+  html body section[data-store="home-banner-categories"] .js-textbanner-image-container:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
   html body section[data-store="home-banner-categories"] .js-textbanner-image:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j):not(#k):not(#l) {
     width: auto !important;
     max-width: 100% !important;
-    height: 86px !important;
+    height: 105px !important;
     object-fit: contain !important;
     display: block !important;
     margin: 0 auto !important;
@@ -180,8 +197,7 @@
   html body .js-footer:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-bottom: 10px !important;
   }
-  /* footer: menu inferior + contacto con aire moderado (ni encimado ni
-     demasiado separado) */
+  /* footer: menu + contacto con aire moderado */
   html body [data-store="footer"] .footer-menu-item:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
     margin-bottom: 10px !important;
   }
