@@ -77,9 +77,14 @@
     justify-content: center !important;
     transform: none !important;
   }
-  /* oculta ".js-empty-search" (lupa tachada) que aparecia al escribir y se
-     superponia con la lupa real -> se veia bugeado */
+  /* oculta ".js-empty-search" (lupa tachada) que aparecia al escribir */
   html body .js-search-form .js-empty-search:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+    display: none !important;
+  }
+  /* oculta el desplegable de sugerencias (fondo azul oscuro) que aparecia al
+     escribir y quedaba como "barra negra" al navegar. El buscador sigue
+     funcionando con Enter o la lupa. */
+  html body .js-search-form .js-search-form-suggestions:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
     display: none !important;
   }
 
@@ -113,13 +118,10 @@
     max-width: 100% !important;
   }
 
-  /* ===== 3) CATEGORIAS — titulo centrado (compensa banda hero) + placas
-     centradas y mas grandes ============================================= */
+  /* ===== 3) CATEGORIAS — titulo centrado (compensa banda hero) + placas == */
   html body section[data-store="home-banner-categories"] .js-banners-mobile-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
   }
-  /* el hero deja 8px de banda oscura arriba; 8+22=30 iguala el borde
-     superior de "Empresas" -> el titulo queda centrado */
   html body section[data-store="home-banner-categories"]:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-top: 22px !important;
   }
@@ -136,9 +138,6 @@
     padding: 0 !important;
     font-size: 20px !important;
   }
-  /* CONTENEDOR de la placa: por defecto 90px, recorta y alinea arriba.
-     Lo hago crecer (height auto) y centrar (flex) -> placa entera, mas
-     grande y centrada. */
   html body section[data-store="home-banner-categories"] .js-textbanner-image-container:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
     height: auto !important;
     min-height: 0 !important;
