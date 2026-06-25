@@ -78,15 +78,17 @@
     transform: none !important;
   }
 
-  /* ===== 1b) LOGO mas abajo + ICONOS (menu/carrito) mas arriba ========= */
+  /* ===== 1b) LOGO mas abajo + ICONOS (menu/carrito) alineados a su tope = */
   html body [data-store="head"] .logo-img:not(#a):not(#b):not(#c):not(#d):not(#e) {
     height: 56px !important;
     max-height: 56px !important;
     width: auto !important;
     margin-top: 18px !important;
+    position: relative !important;
+    top: 12px !important;
   }
   html body [data-store="head"] .utilities-container:not(#a):not(#b):not(#c):not(#d):not(#e) {
-    transform: translateY(-14px) !important;
+    transform: translateY(-32px) !important;
   }
 
   /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed + sin bandas (8x :not) = */
@@ -106,12 +108,12 @@
     max-width: 100% !important;
   }
 
-  /* ===== 3) CATEGORIAS — sin titulo duplicado, placas, titulo centrado = */
+  /* ===== 3) CATEGORIAS — sin titulo duplicado, titulo centrado, placas == */
   html body section[data-store="home-banner-categories"] .js-banners-mobile-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
   }
   html body section[data-store="home-banner-categories"]:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
-    padding-top: 16px !important;
+    padding-top: 10px !important;
   }
   html body section[data-store="home-banner-categories"] .js-banner-container.container:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-left: 10px !important;
@@ -126,12 +128,13 @@
     padding: 0 !important;
     font-size: 20px !important;
   }
-  /* placas: tamano intermedio (115px). La foto no llena del todo el recuadro
-     por el blanco propio del archivo de imagen (limite del asset, no del CSS) */
+  /* placas: 108px, ancho segun proporcion (width:auto) para NO dejar bandas
+     oscuras a los costados. La foto no llena el recuadro por el blanco propio
+     del archivo de imagen (limite del asset, no del CSS). */
   html body section[data-store="home-banner-categories"] .js-textbanner-image:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j):not(#k):not(#l) {
-    width: 100% !important;
+    width: auto !important;
     max-width: 100% !important;
-    height: 115px !important;
+    height: 108px !important;
     object-fit: contain !important;
     display: block !important;
     margin: 0 auto !important;
@@ -178,9 +181,12 @@
   html body .js-footer:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-bottom: 10px !important;
   }
-  /* footer: menu inferior mas pegado al telefono */
-  html body [data-store="footer"] .mb-3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+  /* footer: menu inferior mas pegado al telefono (items y columnas) */
+  html body [data-store="footer"] .footer-menu-item:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
     margin-bottom: 8px !important;
+  }
+  html body [data-store="footer"] .mb-3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+    margin-bottom: 4px !important;
   }
   html body [data-store="footer"] .list.py-2:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
     padding-top: 3px !important;
