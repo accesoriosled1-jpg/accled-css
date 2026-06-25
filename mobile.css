@@ -27,7 +27,9 @@
     margin: 0 !important;
   }
   html body .js-search-form .form-group:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
     position: relative !important;
     width: 100% !important;
     height: 44px !important;
@@ -43,17 +45,18 @@
     width: 100% !important;
     max-width: none !important;
     min-width: 0 !important;
-    height: 100% !important;
-    background: #ffffff !important;
+    flex: 1 1 auto !important;
+    height: auto !important;
+    background: transparent !important;
     border: 0 !important;
     border-radius: 0 !important;
     padding: 0 56px 0 18px !important;
     box-sizing: border-box !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
     line-height: normal !important;
   }
   html body .js-head-logo-row .js-search-input:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h)::placeholder {
-    font-size: 16px !important;
+    font-size: 18px !important;
     line-height: normal !important;
     opacity: 1 !important;
   }
@@ -75,12 +78,15 @@
     transform: none !important;
   }
 
-  /* ===== 1b) LOGO — mas grande y un poco mas abajo ===================== */
+  /* ===== 1b) LOGO mas abajo + ICONOS (menu/carrito) mas arriba ========= */
   html body [data-store="head"] .logo-img:not(#a):not(#b):not(#c):not(#d):not(#e) {
     height: 56px !important;
     max-height: 56px !important;
     width: auto !important;
-    margin-top: 10px !important;
+    margin-top: 18px !important;
+  }
+  html body [data-store="head"] .utilities-container:not(#a):not(#b):not(#c):not(#d):not(#e) {
+    transform: translateY(-14px) !important;
   }
 
   /* ===== 2) BANNER "ESPECIALISTAS" — full-bleed + sin bandas (8x :not) = */
@@ -100,7 +106,7 @@
     max-width: 100% !important;
   }
 
-  /* ===== 3) CATEGORIAS — sin titulo duplicado, placas anchas, centrado = */
+  /* ===== 3) CATEGORIAS — sin titulo duplicado, placas, titulo centrado = */
   html body section[data-store="home-banner-categories"] .js-banners-mobile-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
   }
@@ -108,8 +114,8 @@
     padding-top: 16px !important;
   }
   html body section[data-store="home-banner-categories"] .js-banner-container.container:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
-    padding-left: 6px !important;
-    padding-right: 6px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
   html body section[data-store="home-banner-categories"] .js-banners-title:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: block !important;
@@ -120,10 +126,12 @@
     padding: 0 !important;
     font-size: 20px !important;
   }
+  /* placas: tamano intermedio (115px). La foto no llena del todo el recuadro
+     por el blanco propio del archivo de imagen (limite del asset, no del CSS) */
   html body section[data-store="home-banner-categories"] .js-textbanner-image:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j):not(#k):not(#l) {
     width: 100% !important;
     max-width: 100% !important;
-    height: auto !important;
+    height: 115px !important;
     object-fit: contain !important;
     display: block !important;
     margin: 0 auto !important;
@@ -169,5 +177,13 @@
   }
   html body .js-footer:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-bottom: 10px !important;
+  }
+  /* footer: menu inferior mas pegado al telefono */
+  html body [data-store="footer"] .mb-3:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+    margin-bottom: 8px !important;
+  }
+  html body [data-store="footer"] .list.py-2:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
   }
 }
