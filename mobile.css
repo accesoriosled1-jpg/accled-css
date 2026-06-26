@@ -204,12 +204,16 @@
     padding-bottom: 6px !important;
   }
 
-  /* ===== 6) PAGINAS INTERNAS (categoria / listado / mayoristas) =========
-     El titulo (.page-header) tiene margenes negativos "full-bleed" (calc)
-     que en iOS lo descentran y desalinean del contenido. Los neutralizo. */
-  html body .page-header:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+  /* ===== 6) PAGINAS INTERNAS — titulo centrado =========================
+     El tema pone un full-bleed (margin: calc(50% - 50vw)) en .page-header
+     que lo hace mas ancho que el contenido y lo desalinea. Lo neutralizo
+     con body[class] + 12 :not (el header pasa de 387 a 372 = contenido). */
+  html body[class] .page-header:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j):not(#k):not(#l) {
     margin-left: 0 !important;
     margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     text-align: center !important;
   }
 }
