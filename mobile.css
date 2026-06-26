@@ -77,13 +77,10 @@
     justify-content: center !important;
     transform: none !important;
   }
-  /* oculta ".js-empty-search" (lupa tachada) que aparecia al escribir */
   html body .js-search-form .js-empty-search:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
     display: none !important;
   }
-  /* oculta el desplegable de sugerencias (fondo azul oscuro) que aparecia al
-     escribir y quedaba como "barra negra" al navegar. El buscador sigue
-     funcionando con Enter o la lupa. */
+  /* oculta el desplegable de sugerencias (la "barra negra") */
   html body .js-search-form .js-search-form-suggestions:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
     display: none !important;
   }
@@ -173,7 +170,7 @@
     margin: 0 0 24px !important;
   }
 
-  /* ===== 5) FOOTER — sacar flechas del carrusel de beneficios (hueco) == */
+  /* ===== 5) FOOTER ===================================================== */
   html body section.section-informative-banners .js-informative-banners-prev:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j),
   html body section.section-informative-banners .js-informative-banners-next:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
@@ -196,7 +193,6 @@
   html body .js-footer:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     padding-bottom: 10px !important;
   }
-  /* footer: menu + contacto con aire moderado */
   html body [data-store="footer"] .footer-menu-item:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
     margin-bottom: 10px !important;
   }
@@ -206,5 +202,14 @@
   html body [data-store="footer"] .list.py-2:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
     padding-top: 6px !important;
     padding-bottom: 6px !important;
+  }
+
+  /* ===== 6) PAGINAS INTERNAS (categoria / listado / mayoristas) =========
+     El titulo (.page-header) tiene margenes negativos "full-bleed" (calc)
+     que en iOS lo descentran y desalinean del contenido. Los neutralizo. */
+  html body .page-header:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: center !important;
   }
 }
