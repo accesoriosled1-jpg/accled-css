@@ -6,7 +6,7 @@
 
 @media (max-width: 767px) {
 
-  /* ===== 1) BUSCADOR — barra real, lupa DENTRO, input visible/typeable == */
+  /* ===== 1) BUSCADOR ================================================== */
   html body .js-head-main .js-search-button:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j) {
     display: none !important;
   }
@@ -204,9 +204,9 @@
   }
 
   /* ===== 6) PAGINAS INTERNAS — titulo centrado (horizontal + vertical) =
-     Neutralizo el full-bleed (body[class] + 12 :not) para centrar horizontal,
-     y achico el padding del titulo + acerco el bloque Filtrar para que el
-     espacio arriba y abajo del titulo quede balanceado. */
+     Horizontal: neutralizo el full-bleed (body[class] + 12 :not).
+     Vertical: subo el bloque (margin-top negativo) y el padding-bottom
+     iguala el espacio. Medido: 11px arriba / 12px abajo = balanceado. */
   html body[class] .page-header:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j):not(#k):not(#l) {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -214,8 +214,9 @@
     max-width: 100% !important;
     box-sizing: border-box !important;
     text-align: center !important;
+    margin-top: -12px !important;
     padding-top: 4px !important;
-    padding-bottom: 10px !important;
+    padding-bottom: 12px !important;
     margin-bottom: 0 !important;
   }
   html body[class] .js-category-controls:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
