@@ -203,10 +203,10 @@
     padding-bottom: 6px !important;
   }
 
-  /* ===== 6) PAGINAS INTERNAS — titulo centrado (horizontal + vertical) =
-     Horizontal: neutralizo el full-bleed (body[class] + 12 :not).
-     Vertical: subo el bloque (margin-top negativo) y el padding-bottom
-     iguala el espacio. Medido: 11px arriba / 12px abajo = balanceado. */
+  /* ===== 6) PAGINAS INTERNAS — titulo centrado, SIN cortarse ==========
+     Horizontal: neutralizo el full-bleed. Vertical: sin margin-top
+     negativo (eso cortaba el titulo); el header deja ~19px arriba y lo
+     igualo con padding-bottom. */
   html body[class] .page-header:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h):not(#i):not(#j):not(#k):not(#l) {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -214,9 +214,9 @@
     max-width: 100% !important;
     box-sizing: border-box !important;
     text-align: center !important;
-    margin-top: -12px !important;
-    padding-top: 4px !important;
-    padding-bottom: 12px !important;
+    margin-top: 0 !important;
+    padding-top: 2px !important;
+    padding-bottom: 22px !important;
     margin-bottom: 0 !important;
   }
   html body[class] .js-category-controls:not(#a):not(#b):not(#c):not(#d):not(#e):not(#f):not(#g):not(#h) {
