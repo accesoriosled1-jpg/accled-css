@@ -2310,3 +2310,16 @@ html body .cart-item:not(#a):not(#b):not(#c):not(#d) {
 		margin: 6px auto 18px !important;
 	}
 }
+
+
+/* ===== CONTACTO MOBILE - tarjeta unificada ===== */
+@media (max-width: 767px) {
+body.template-contact .contact-page .container:not(#z0):not(#z1):not(#z2):not(#z3) { background: #ffffff !important; border-radius: 18px !important; box-shadow: 0 6px 24px rgba(10,22,40,0.10) !important; padding: 20px 16px !important; margin-top: 16px !important; max-width: 440px !important; }
+body.template-contact .contact-page div.text-center:not(#z0):not(#z1):not(#z2):not(#z3) { background: transparent !important; box-shadow: none !important; border-radius: 0 !important; margin: 0 0 6px !important; padding: 0 !important; }
+body.template-contact .contact-page div.text-center p:not(#z0):not(#z1):not(#z2):not(#z3) { color: #45525f !important; font-size: 14px !important; line-height: 1.45 !important; margin: 0 0 16px !important; text-align: center !important; }
+body.template-contact .contact-page div.text-center ul:not(#z0):not(#z1):not(#z2):not(#z3) { display: flex !important; flex-direction: column !important; gap: 9px !important; padding: 0 !important; margin: 0 !important; list-style: none !important; }
+body.template-contact .contact-page div.text-center ul li:not(#z0):not(#z1):not(#z2):not(#z3) { display: flex !important; align-items: center !important; gap: 12px !important; padding: 10px 12px !important; margin: 0 !important; background: #f4f6f9 !important; border-radius: 12px !important; text-align: left !important; font-size: 13px !important; color: #1a2634 !important; border: 0 !important; word-break: break-word !important; }
+body.template-contact .contact-page div.text-center ul li svg:not(#z0):not(#z1):not(#z2):not(#z3) { background: #0a1628 !important; fill: #ffffff !important; border-radius: 50% !important; padding: 8px !important; width: 34px !important; height: 34px !important; box-sizing: border-box !important; flex-shrink: 0 !important; }
+body.template-contact .contact-page .row.justify-content-center:not(#z0):not(#z1):not(#z2):not(#z3) { border-top: 1px solid #edf0f3 !important; margin-top: 16px !important; padding-top: 18px !important; }
+body.template-contact .contact-page form.js-form:not(#z0):not(#z1):not(#z2):not(#z3) { background: transparent !important; box-shadow: none !important; border-radius: 0 !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; margin: 0 !important; }
+}
