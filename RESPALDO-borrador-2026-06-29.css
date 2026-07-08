@@ -4,11 +4,10 @@
 
 /* ===== CONTACTO MOBILE v5 - ajustes EasyTrack ===== */
 @media (max-width: 767px) {
-html body.template-contact section.page-header:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){background:transparent;box-shadow:none;padding:20px 18px 8px}
-html body.template-contact section.page-header h1:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){color:#111827;text-align:left;transform:scale(1.18);transform-origin:left center}
-body.template-contact .contact-page form input:not([type=checkbox]):not([type=radio]):not([type=submit]):not(#z0):not(#z1):not(#z2):not(#z3),body.template-contact .contact-page form textarea:not(#z0):not(#z1):not(#z2):not(#z3){background:#eaedf1}
+html body.template-contact section.page-header:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){background:transparent !important;box-shadow:none !important;padding:20px 18px 8px !important}
+html body.template-contact section.page-header h1:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){color:#111827 !important;text-align:left !important;transform:scale(1.18) !important;transform-origin:left center !important}
+body.template-contact .contact-page form input:not([type=checkbox]):not([type=radio]):not([type=submit]):not(#z0):not(#z1):not(#z2):not(#z3),body.template-contact .contact-page form textarea:not(#z0):not(#z1):not(#z2):not(#z3){background:#eaedf1 !important}
 }
-
 body, p, span, a, li, td, input, button, select {
 	font-family: "Inter", sans-serif !important;
 }
