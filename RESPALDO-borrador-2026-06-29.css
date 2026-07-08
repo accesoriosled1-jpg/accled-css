@@ -2,13 +2,15 @@
 
 @import url("https://cdn.jsdelivr.net/gh/accesoriosled1-jpg/accled-css@575ff06/mobile.css");
 
-/* ===== CONTACTO MOBILE v7 add - form sin borde, ancho, Ej ===== */
+/* ===== CONTACTO MOBILE v8 - ancho completo + centrado robusto ===== */
 @media (max-width: 767px) {
-body.template-contact .contact-page .container:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){padding-left:8px !important;padding-right:8px !important}
-body.template-contact .contact-page form.js-form:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){border:none !important;box-shadow:none !important;background:transparent !important;outline:none !important}
+body.template-contact .contact-page .container:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){max-width:600px !important;padding-left:5px !important;padding-right:5px !important;margin-left:auto !important;margin-right:auto !important}
+body.template-contact .contact-page .row:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){display:block !important;margin-left:0 !important;margin-right:0 !important}
+body.template-contact .contact-page .col-md-6:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){flex:0 0 100% !important;max-width:100% !important;width:100% !important;padding-left:0 !important;padding-right:0 !important;margin:0 !important}
+body.template-contact .contact-page form.js-form:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){width:100% !important;max-width:100% !important;display:block !important;margin:0 auto !important;border:none !important;box-shadow:none !important;background:transparent !important;outline:none !important}
+body.template-contact .contact-page form input:not([type=checkbox]):not([type=radio]):not([type=submit]):not(#z0):not(#z1):not(#z2):not(#z3):not(#z4),body.template-contact .contact-page form textarea:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4),body.template-contact .contact-page form select:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){width:100% !important;max-width:100% !important;box-sizing:border-box !important;display:block !important;margin-left:0 !important;margin-right:0 !important}
 body.template-contact .contact-page form input::placeholder,body.template-contact .contact-page form textarea::placeholder{text-transform:capitalize !important}
-}
-
+	}
 /* ===== CONTACTO MOBILE v6 - centrado, titulo original, sin bordes ===== */
 @media (max-width: 767px) {
 body.template-contact .contact-page div.text-center p:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){text-align:center !important}
