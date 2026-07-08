@@ -2,6 +2,13 @@
 
 @import url("https://cdn.jsdelivr.net/gh/accesoriosled1-jpg/accled-css@575ff06/mobile.css");
 
+/* ===== CONTACTO MOBILE v7 add - form sin borde, ancho, Ej ===== */
+@media (max-width: 767px) {
+body.template-contact .contact-page .container:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){padding-left:8px !important;padding-right:8px !important}
+body.template-contact .contact-page form.js-form:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){border:none !important;box-shadow:none !important;background:transparent !important;outline:none !important}
+body.template-contact .contact-page form input::placeholder,body.template-contact .contact-page form textarea::placeholder{text-transform:capitalize !important}
+}
+
 /* ===== CONTACTO MOBILE v6 - centrado, titulo original, sin bordes ===== */
 @media (max-width: 767px) {
 body.template-contact .contact-page div.text-center p:not(#z0):not(#z1):not(#z2):not(#z3):not(#z4){text-align:center !important}
